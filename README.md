@@ -1,2 +1,2 @@
-# tamagui-ui-kit
+# tamagui-ui-kit-vue
 Tamagui UI Kit. Just for fun
