@@ -8,7 +8,7 @@ const meta = {
   argTypes: {
     size: {
       control: "select",
-      options: ["sm", "lg", "def"],
+      options: ["sm", "def", "lg"],
     },
     variant: {
       control: "select",
@@ -17,6 +17,10 @@ const meta = {
     theme: {
       control: "select",
       options: ["light", "dark"],
+    },
+    type: {
+      control: "select",
+      options: ["plain", "chromeless", "outline"],
     },
     disabled: { control: "boolean" },
     loading: { control: "boolean" },
@@ -29,8 +33,9 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     size: "def",
-    variant: "green",
-    theme: "light",
+    variant: "grey",
+    theme: "dark",
+    type: "plain",
     disabled: false,
     loading: false,
   },
