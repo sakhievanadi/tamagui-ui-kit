@@ -23,6 +23,10 @@ const meta = {
       control: "select",
       options: ["plain", "chromeless", "outline"],
     },
+    activated: {
+      control: "select",
+      options: [true, false],
+    },
     disabled: { control: "boolean" },
     loading: { control: "boolean" },
   },
@@ -37,6 +41,7 @@ export const Default: Story = {
     variant: "grey",
     theme: "dark",
     type: "plain",
+    activated: true,
     disabled: false,
     loading: false,
   },

@@ -10,6 +10,7 @@ interface Props {
   loading?: boolean;
   iconAfter?: boolean;
   icon?: boolean;
+  activated?: boolean;
 }
 
 const {
@@ -21,6 +22,7 @@ const {
   loading = false,
   iconAfter = true,
   icon = true,
+  activated = true,
 } = defineProps<Props>();
 
 const buttonAttrs = computed(() => ({
@@ -30,6 +32,7 @@ const buttonAttrs = computed(() => ({
   "data-type": type,
   "data-disabled": disabled,
   "icon-size": iconAfter,
+  "data-activated": activated,
 }));
 </script>
 
@@ -77,7 +80,7 @@ button {
     --icon-gap: 18px;
   }
 
-  &[data-variant="grey"][data-theme="dark"] {
+  &[data-variant="grey"][data-theme="dark"][data-activated="false"] {
     background-color: var(--tamagui-color-gray-4);
     color: var(--tamagui-color-gray-12);
 
@@ -99,9 +102,17 @@ button {
     }
   }
 
-  &[data-variant="grey"][data-theme="theme"] {
-    background-color: var(--tamagui-color-gray-4);
+  &[data-variant="grey"][data-theme="dark"][data-activated="true"] {
+    background-color: var(--tamagui-color-gray-8);
     color: var(--tamagui-color-gray-12);
+
+    &:hover {
+      background-color: var(--tamagui-color-gray-9);
+    }
+
+    &:active {
+      background-color: var(--tamagui-color-gray-10);
+    }
 
     &[data-type="chromeless"] {
       background-color: transparent;
@@ -109,7 +120,7 @@ button {
 
     &[data-type="outline"] {
       background-color: transparent;
-      border: 1px solid var(--tamagui-color-gray-6);
+      border: 1px solid var(--tamagui-color-gray-9);
     }
   }
 }
