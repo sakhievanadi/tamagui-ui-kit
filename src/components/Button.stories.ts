@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import Button from "./Button.vue";
+import StarOutlineRoundedIcon from "~icons/material-symbols/star-outline-rounded";
 
 const meta = {
   title: "Components/Button",
@@ -40,10 +41,23 @@ export const Default: Story = {
     loading: false,
   },
   render: (args) => ({
-    components: { Button },
+    components: { Button, StarOutlineRoundedIcon },
     setup() {
       return { args };
     },
-    template: `<Button v-bind="args">Click me</Button>`,
+    template: `
+    <Button v-bind="args">
+
+      <template #icon-after>
+        <StarOutlineRoundedIcon>
+      </template>
+
+      Click me
+
+      <template #icon>
+        <StarOutlineRoundedIcon>
+      </template>
+      
+    </Button>`,
   }),
 };
