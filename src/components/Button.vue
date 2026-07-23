@@ -22,7 +22,7 @@ const {
   loading = false,
   iconAfter = true,
   icon = true,
-  activated = true,
+  activated = false,
 } = defineProps<Props>();
 
 const buttonAttrs = computed(() => ({
@@ -38,7 +38,7 @@ const buttonAttrs = computed(() => ({
 
 <template>
   <button v-bind="buttonAttrs" :disabled="disabled || loading">
-    <slot name="icon-after" v-if="iconAfter && icon" class="icon" />
+    <slot name="icon-after" v-if="iconAfter" class="icon" />
 
     <slot />
     <slot name="icon" v-if="icon" class="icon" />
@@ -48,11 +48,11 @@ const buttonAttrs = computed(() => ({
 <style scoped>
 button {
   font-family: var(--tamagui-font-family);
-  border: none;
   border-radius: 7px;
   display: flex;
   align-items: center;
   gap: var(--icon-gap);
+  border-style: none;
 
   .icon {
     width: var(--icon-size);
@@ -81,37 +81,91 @@ button {
   }
 
   &[data-variant="grey"][data-theme="dark"][data-activated="false"] {
-    background-color: var(--tamagui-color-gray-4);
-    color: var(--tamagui-color-gray-12);
+    background-color: var(--tamagui-color-dark-gray-4);
+    color: var(--tamagui-color-dark-gray-12);
 
     &:hover {
-      background-color: var(--tamagui-color-gray-8);
+      background-color: var(--tamagui-color-dark-gray-8);
+      border: 1px solid var(--tamagui-color-dark-gray-8);
     }
 
     &:active {
-      background-color: var(--tamagui-color-gray-4);
+      background-color: var(--tamagui-color-dark-gray-4);
+      border: 1px solid var(--tamagui-color-dark-gray-4);
     }
 
     &[data-type="chromeless"] {
       background-color: transparent;
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: var(--tamagui-color-dark-gray-5);
+      }
+
+      &:active {
+        background-color: var(--tamagui-color-dark-gray-6);
+      }
     }
 
     &[data-type="outline"] {
       background-color: transparent;
-      border: 1px solid var(--tamagui-color-gray-6);
+      border: 1px solid var(--tamagui-color-dark-gray-6);
+
+      &:hover {
+        border: 1px solid var(--tamagui-color-dark-gray-8);
+      }
+
+      &:active {
+        border: 1px solid var(--tamagui-color-dark-gray-6);
+      }
     }
   }
 
   &[data-variant="grey"][data-theme="dark"][data-activated="true"] {
-    background-color: var(--tamagui-color-gray-8);
-    color: var(--tamagui-color-gray-12);
+    background-color: var(--tamagui-color-dark-gray-8);
+    color: var(--tamagui-color-dark-gray-12);
 
     &:hover {
-      background-color: var(--tamagui-color-gray-9);
+      background-color: var(--tamagui-color-dark-gray-9);
     }
 
     &:active {
-      background-color: var(--tamagui-color-gray-10);
+      background-color: var(--tamagui-color-dark-gray-10);
+    }
+
+    &[data-type="chromeless"] {
+      background-color: transparent;
+
+      &:hover {
+        background-color: var(--tamagui-color-dark-gray-9);
+      }
+
+      &:active {
+        background-color: var(--tamagui-color-dark-gray-10);
+      }
+    }
+
+    &[data-type="outline"] {
+      background-color: transparent;
+      border: 1px solid var(--tamagui-color-dark-gray-9);
+
+      &:hover {
+      }
+    }
+  }
+
+  &[data-variant="grey"][data-theme="light"][data-activated="false"] {
+    background-color: var(--tamagui-color-light-gray-4);
+    color: var(--tamagui-color-light-gray-12);
+    border: 1px solid var(--tamagui-color-light-gray-4);
+
+    &:hover {
+      background-color: var(--tamagui-color-light-gray-5);
+      border: 1px solid var(--tamagui-color-light-gray-8);
+    }
+
+    &:active {
+      background-color: var(--tamagui-color-light-gray-6);
     }
 
     &[data-type="chromeless"] {
@@ -120,7 +174,7 @@ button {
 
     &[data-type="outline"] {
       background-color: transparent;
-      border: 1px solid var(--tamagui-color-gray-9);
+      border: 1px solid var(--tamagui-color-light-gray-6);
     }
   }
 }
