@@ -13,7 +13,7 @@ const meta = {
     },
     variant: {
       control: "select",
-      options: ["grey", "green", "red", "yellow"],
+      options: ["gray", "green", "red", "yellow"],
     },
     theme: {
       control: "select",
@@ -38,7 +38,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     size: "def",
-    variant: "grey",
+    variant: "gray",
     theme: "dark",
     type: "plain",
     activated: true,

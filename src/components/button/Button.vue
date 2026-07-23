@@ -3,7 +3,7 @@ import { computed } from "vue";
 
 interface Props {
   size: "sm" | "lg" | "def";
-  variant: "grey" | "green" | "red" | "yellow";
+  variant: "gray" | "green" | "red" | "yellow";
   theme: "light" | "dark";
   type: "plain" | "chromeless" | "outline";
   disabled?: boolean;
@@ -15,7 +15,7 @@ interface Props {
 
 const {
   size = "def",
-  variant = "grey",
+  variant = "gray",
   theme = "dark",
   type = "plain",
   disabled = false,
@@ -80,7 +80,7 @@ button {
     --icon-gap: 18px;
   }
 
-  &[data-variant="grey"][data-theme="dark"][data-activated="false"] {
+  &[data-variant="gray"][data-theme="dark"][data-activated="false"] {
     background-color: var(--tamagui-color-dark-gray-4);
     color: var(--tamagui-color-dark-gray-12);
 
@@ -112,16 +112,16 @@ button {
       border: 1px solid var(--tamagui-color-dark-gray-6);
 
       &:hover {
-        border: 1px solid var(--tamagui-color-dark-gray-8);
+        border-color: var(--tamagui-color-dark-gray-8);
       }
 
       &:active {
-        border: 1px solid var(--tamagui-color-dark-gray-6);
+        border-color: var(--tamagui-color-dark-gray-6);
       }
     }
   }
 
-  &[data-variant="grey"][data-theme="dark"][data-activated="true"] {
+  &[data-variant="gray"][data-theme="dark"][data-activated="true"] {
     background-color: var(--tamagui-color-dark-gray-8);
     color: var(--tamagui-color-dark-gray-12);
 
@@ -150,18 +150,23 @@ button {
       border: 1px solid var(--tamagui-color-dark-gray-9);
 
       &:hover {
+        border-color: var(--tamagui-color-dark-gray-10);
+      }
+
+      &:active {
+        border-color: var(--tamagui-color-dark-gray-6);
       }
     }
   }
 
-  &[data-variant="grey"][data-theme="light"][data-activated="false"] {
+  &[data-variant="gray"][data-theme="light"][data-activated="false"] {
     background-color: var(--tamagui-color-light-gray-4);
     color: var(--tamagui-color-light-gray-12);
     border: 1px solid var(--tamagui-color-light-gray-4);
 
     &:hover {
       background-color: var(--tamagui-color-light-gray-5);
-      border: 1px solid var(--tamagui-color-light-gray-8);
+      border-color: var(--tamagui-color-light-gray-8);
     }
 
     &:active {
@@ -170,11 +175,27 @@ button {
 
     &[data-type="chromeless"] {
       background-color: transparent;
+
+      &:hover {
+        background-color: var(--tamagui-color-light-gray-5);
+      }
+
+      &:active {
+        background: var(--tamagui-color-light-gray-6);
+      }
     }
 
     &[data-type="outline"] {
       background-color: transparent;
       border: 1px solid var(--tamagui-color-light-gray-6);
+
+      &:hover {
+        border-color: var(--tamagui-color-light-gray-8);
+      }
+
+      &:active {
+        border-color: var(--tamagui-color-light-gray-6);
+      }
     }
   }
 }
