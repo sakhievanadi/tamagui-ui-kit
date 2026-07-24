@@ -5,13 +5,17 @@ interface Props {
   size: "sm" | "lg" | "def";
   variant: "gray" | "green" | "red" | "yellow";
   theme: "light" | "dark";
-}
-
-interface CheckboxState {
   indeterminate: boolean;
+  disabled?: boolean;
 }
 
-const { size = "def", variant = "gray", theme = "dark" } = defineProps<Props>();
+const {
+  size = "def",
+  variant = "gray",
+  theme = "dark",
+  indeterminate = false,
+  disabled = false,
+} = defineProps<Props>();
 
 const checkboxAttrs = computed(() => ({
   "data-size": size,
@@ -23,12 +27,28 @@ const checked = defineModel<boolean>({ default: false });
 </script>
 
 <template>
-  <input
-    type="checkbox"
-    v-bind="checkboxAttrs"
-    v-model="checked"
-    :indeterminate="indeterminate"
-  />
+  <label class="tamagui-checkbox" v-bind="checkboxAttrs">
+    <input
+      type="checkbox"
+      v-model="checked"
+      :indeterminate="indeterminate"
+      :disabled
+      class="visually-hidden-input"
+    />
+    <span class="tamagui-checkbox-box"></span>
+  </label>
 </template>
 
-<style scoped></style>
+<style scoped>
+.visually-hidden-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
