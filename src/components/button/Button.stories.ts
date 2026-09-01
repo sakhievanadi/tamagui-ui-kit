@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/vue3";
 import Button from "./Button.vue";
-import StarOutlineRoundedIcon from "~icons/material-symbols/star-outline-rounded";
+import AirplayOutlineIcon from "~icons/material-symbols/airplay-outline";
 
 const meta = {
   title: "Components/Button",
@@ -46,7 +46,7 @@ export const Default: Story = {
     loading: false,
   },
   render: (args) => ({
-    components: { Button, StarOutlineRoundedIcon },
+    components: { Button, AirplayOutlineIcon },
     setup() {
       return { args };
     },
@@ -54,13 +54,13 @@ export const Default: Story = {
     <Button v-bind="args">
 
       <template #icon-after>
-        <StarOutlineRoundedIcon>
+        <AirplayOutlineIcon>
       </template>
 
       Click me
 
       <template #icon>
-        <StarOutlineRoundedIcon>
+        <AirplayOutlineIcon>
       </template>
       
     </Button>`,

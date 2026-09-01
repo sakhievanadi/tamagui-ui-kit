@@ -80,61 +80,53 @@ button {
     --icon-gap: 18px;
   }
 
-  &[data-variant="gray"][data-theme="dark"][data-activated="false"] {
-    background-color: var(--tamagui-color-dark-gray-4);
-    color: var(--tamagui-color-dark-gray-12);
+  /* dark gray variable */
 
-    &:hover {
-      background-color: var(--tamagui-color-dark-gray-8);
-      border: 1px solid var(--tamagui-color-dark-gray-8);
-    }
-
-    &:active {
+  &[data-variant="gray"][data-theme="dark"] {
+    &[data-activated="false"] {
       background-color: var(--tamagui-color-dark-gray-4);
-      border: 1px solid var(--tamagui-color-dark-gray-4);
-    }
-
-    &[data-type="chromeless"] {
-      background-color: transparent;
-      border: 1px solid transparent;
+      color: var(--tamagui-color-dark-gray-12);
 
       &:hover {
-        background-color: var(--tamagui-color-dark-gray-5);
+        background-color: var(--tamagui-color-dark-gray-8);
+        border: 1px solid var(--tamagui-color-dark-gray-8);
       }
 
       &:active {
-        background-color: var(--tamagui-color-dark-gray-6);
+        background-color: var(--tamagui-color-dark-gray-4);
+        border: 1px solid var(--tamagui-color-dark-gray-4);
+      }
+
+      &[data-type="chromeless"] {
+        background-color: transparent;
+        border: 1px solid transparent;
+
+        &:hover {
+          background-color: var(--tamagui-color-dark-gray-5);
+        }
+
+        &:active {
+          background-color: var(--tamagui-color-dark-gray-6);
+        }
+      }
+
+      &[data-type="outline"] {
+        background-color: transparent;
+        border: 1px solid var(--tamagui-color-dark-gray-6);
+
+        &:hover {
+          border-color: var(--tamagui-color-dark-gray-8);
+        }
+
+        &:active {
+          border-color: var(--tamagui-color-dark-gray-6);
+        }
       }
     }
 
-    &[data-type="outline"] {
-      background-color: transparent;
-      border: 1px solid var(--tamagui-color-dark-gray-6);
-
-      &:hover {
-        border-color: var(--tamagui-color-dark-gray-8);
-      }
-
-      &:active {
-        border-color: var(--tamagui-color-dark-gray-6);
-      }
-    }
-  }
-
-  &[data-variant="gray"][data-theme="dark"][data-activated="true"] {
-    background-color: var(--tamagui-color-dark-gray-8);
-    color: var(--tamagui-color-dark-gray-12);
-
-    &:hover {
-      background-color: var(--tamagui-color-dark-gray-9);
-    }
-
-    &:active {
-      background-color: var(--tamagui-color-dark-gray-10);
-    }
-
-    &[data-type="chromeless"] {
-      background-color: transparent;
+    &[data-activated="true"] {
+      background-color: var(--tamagui-color-dark-gray-8);
+      color: var(--tamagui-color-dark-gray-12);
 
       &:hover {
         background-color: var(--tamagui-color-dark-gray-9);
@@ -143,59 +135,86 @@ button {
       &:active {
         background-color: var(--tamagui-color-dark-gray-10);
       }
-    }
 
-    &[data-type="outline"] {
-      background-color: transparent;
-      border: 1px solid var(--tamagui-color-dark-gray-9);
+      &[data-type="chromeless"] {
+        background-color: transparent;
 
-      &:hover {
-        border-color: var(--tamagui-color-dark-gray-10);
+        &:hover {
+          background-color: var(--tamagui-color-dark-gray-9);
+          border-color: var(--tamagui-color-dark-gray-9);
+        }
+
+        &:active {
+          background-color: var(--tamagui-color-dark-gray-10);
+          border-color: var(--tamagui-color-dark-gray-10);
+        }
       }
 
-      &:active {
-        border-color: var(--tamagui-color-dark-gray-6);
+      &[data-type="outline"] {
+        background-color: transparent;
+        border: 1px solid var(--tamagui-color-dark-gray-9);
+
+        &:hover {
+          border-color: var(--tamagui-color-dark-gray-10);
+        }
+
+        &:active {
+          border-color: var(--tamagui-color-dark-gray-6);
+        }
       }
     }
   }
 
-  &[data-variant="gray"][data-theme="light"][data-activated="false"] {
-    background-color: var(--tamagui-color-light-gray-4);
-    color: var(--tamagui-color-light-gray-12);
-    border: 1px solid var(--tamagui-color-light-gray-4);
+  /* dark gray variable ends*/
 
-    &:hover {
-      background-color: var(--tamagui-color-light-gray-5);
-      border-color: var(--tamagui-color-light-gray-8);
-    }
+  /* light gray variable */
 
-    &:active {
-      background-color: var(--tamagui-color-light-gray-6);
-    }
-
-    &[data-type="chromeless"] {
-      background-color: transparent;
+  &[data-variant="gray"][data-theme="light"] {
+    &[data-activated="false"] {
+      background-color: var(--tamagui-color-light-gray-4);
+      color: var(--tamagui-color-light-gray-12);
+      border: 1px solid var(--tamagui-color-light-gray-4);
 
       &:hover {
         background-color: var(--tamagui-color-light-gray-5);
-      }
-
-      &:active {
-        background: var(--tamagui-color-light-gray-6);
-      }
-    }
-
-    &[data-type="outline"] {
-      background-color: transparent;
-      border: 1px solid var(--tamagui-color-light-gray-6);
-
-      &:hover {
         border-color: var(--tamagui-color-light-gray-8);
       }
 
       &:active {
-        border-color: var(--tamagui-color-light-gray-6);
+        background-color: var(--tamagui-color-light-gray-6);
       }
+
+      &[data-type="chromeless"] {
+        background-color: transparent;
+        border: 1px solid transparent;
+
+        &:hover {
+          background-color: var(--tamagui-color-light-gray-5);
+          border-color: var(--tamagui-color-light-gray-5);
+        }
+
+        &:active {
+          background: var(--tamagui-color-light-gray-6);
+          border-color: var(--tamagui-color-light-gray-6);
+        }
+      }
+
+      &[data-type="outline"] {
+        background-color: transparent;
+        border: 1px solid var(--tamagui-color-light-gray-6);
+
+        &:hover {
+          border-color: var(--tamagui-color-light-gray-8);
+        }
+
+        &:active {
+          border-width: 2px;
+        }
+      }
+    }
+
+    &[data-activated="true"] {
+      background-color: var(--tamagui-color-dark-gray-8);
     }
   }
 }
