@@ -109,6 +109,11 @@ const checked = defineModel<boolean>({ default: false });
     box-sizing: border-box;
   }
 
+  .visually-hidden-input:disabled ~ .tamagui-checkbox-box {
+    opacity: 50%;
+    pointer-events: none;
+  }
+
   &[data-variant="gray"][data-theme="dark"] {
     .tamagui-checkbox-box {
       background-color: var(--tamagui-color-dark-gray-1);
@@ -126,14 +131,44 @@ const checked = defineModel<boolean>({ default: false });
         background-color: var(--tamagui-color-dark-gray-2);
       }
     }
-
-    .visually-hidden-input:disabled ~ .tamagui-checkbox-box {
-      opacity: 50%;
-      pointer-events: none;
-    }
   }
 
   &[data-variant="gray"][data-theme="light"] {
+    .tamagui-checkbox-box {
+      background-color: var(--tamagui-color-light-gray-1);
+      border-color: var(--tamagui-color-light-gray-6);
+
+      .tamagui-checkbox-box-icon {
+        color: var(--tamagui-color-light-gray-12);
+      }
+
+      &:hover {
+        border-color: var(--tamagui-color-light-gray-8);
+      }
+
+      &:active {
+        background-color: var(--tamagui-color-light-gray-2);
+      }
+    }
+  }
+
+  &[data-variant="green"][data-theme="light"] {
+    .tamagui-checkbox-box {
+      background-color: var(--tamagui-color-light-gray-1);
+      border-color: var(--tamagui-color-light-gray-6);
+
+      .tamagui-checkbox-box-icon {
+        color: var(--tamagui-color-light-gray-12);
+      }
+
+      &:hover {
+        border-color: var(--tamagui-color-light-gray-8);
+      }
+
+      &:active {
+        background-color: var(--tamagui-color-light-gray-2);
+      }
+    }
   }
 }
 </style>
